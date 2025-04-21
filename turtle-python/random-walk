@@ -1,0 +1,43 @@
+from turtle import Turtle, Screen 
+from random import *
+
+tim = Turtle()
+tim.shape("arrow")
+tim.pensize(5)
+tim.speed("fastest")
+
+screen = Screen()
+screen.setup(width=800, height=600)
+screen.title("Random Walk")
+screen.bgcolor("black")
+running = True
+
+def stop(x, y):
+    global running
+    running = False
+
+screen.onscreenclick(stop)
+
+
+colors = [
+    "red", "blue", "green", "yellow", "orange", "purple", "pink",
+    "cyan", "magenta", "gold", "turquoise", "lime", "indigo",
+    "violet", "brown", "gray", "navy", "maroon", "olive",
+    "coral", "salmon", "aqua", "teal", "orchid"
+]
+dir = [0, 90, 180, 270]
+
+while running: 
+    tim.color(choice(colors))
+    tim.forward(30)
+    tim.setheading(choice(dir))
+screen = Screen()
+screen().exitonclick()
+
+
+
+
+
+
+
+
